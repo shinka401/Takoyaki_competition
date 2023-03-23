@@ -1,7 +1,13 @@
 import { OctopusBalls } from "@/components/OctopusBalls";
 
 const Home = () => {
-  return <OctopusBalls />;
+  return (
+    <>
+      <div>たこ焼きアートコンペティション</div>
+      <OctopusBalls />
+      <div>AIチャットでも入れる？</div>
+    </>
+  );
 };
 
 export default Home;
