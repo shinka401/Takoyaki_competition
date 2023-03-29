@@ -22,8 +22,8 @@ export const OctopusBalls = () => {
       antialias: devicePixelRatio === 1,
     });
     // レンダラー
-    renderer.setSize(window.innerWidth * 0.7, window.innerHeight * 0.7);
     renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setSize(window.innerWidth * 0.6, window.innerHeight * 0.6);
     renderer.setClearColor(0x000000, 1);
     renderer.shadowMap.enabled = true;
     const el = mountRef.current;
