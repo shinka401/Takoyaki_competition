@@ -7,6 +7,9 @@ const Home = () => {
         たこ焼きアートコンペティション
       </h1>
       <OctopusBalls />
+      <h1 className="text-center text-xl p-1 font-black  text-white">
+        残り X日
+      </h1>
       <button className="bg-gray-600 hover:bg-gray-500 text-white rounded py-1 px-2 m-2">
         詳細
       </button>
