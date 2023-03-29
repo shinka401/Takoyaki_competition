@@ -12,7 +12,6 @@ const Home = () => {
       </h1>
       <OctopusBalls />
       <div className="flex flex-row items-center justify-center">
-        <h2 className="text-center text-2xl text-white font-black">残り X日</h2>
         <button className="bg-gray-600 hover:bg-gray-500 text-white rounded py-1 px-2 m-2">
           詳細
         </button>
