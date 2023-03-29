@@ -4,7 +4,9 @@ import { TrackballControls } from "three/examples/jsm/controls/TrackballControls
 
 export const OctopusBalls = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
+    if (!mountRef.current) return;
     // シーン
     const scene = new THREE.Scene();
     // カメラ
@@ -20,7 +22,7 @@ export const OctopusBalls = () => {
       antialias: devicePixelRatio === 1,
     });
     // レンダラー
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setSize(window.innerWidth * 0.7, window.innerHeight * 0.7);
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setClearColor(0x000000, 1);
     renderer.shadowMap.enabled = true;
@@ -72,7 +74,13 @@ export const OctopusBalls = () => {
       requestAnimationFrame(animate);
     };
     animate();
-  });
+    return () => {
+      if (el.contains(renderer.domElement)) {
+        el.removeChild(renderer.domElement);
+      }
+      controller.dispose();
+    };
+  }, []);
 
   return <div ref={mountRef} />;
 };
